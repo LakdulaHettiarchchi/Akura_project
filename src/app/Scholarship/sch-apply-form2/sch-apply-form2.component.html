@@ -1,0 +1,149 @@
+<div class="p-3 container rounded" >
+
+    <div class="d-flex justify-content-left">
+      <img src="../../assets/img/akura_logo.png">
+    </div>
+  
+    <div class="d-flex justify-content-left">
+        <h3>Scholarship Application Form</h3>
+      </div>
+  
+    <hr>
+  
+    <div class="">
+      <form  #familyDatailsForm="ngForm">
+        <h5>Family details</h5>
+  
+        <div class="form-group">
+              <h6>Details of Father</h6>
+              <hr>
+              <div class="form-group">
+                <label>Name:</label>
+                <input type="text" #fatherName="ngModel" class="form-control" placeholder="name with initials" name="fatherName"   [class.is-invalid]="fatherName.invalid  && fatherName.touched" class="form-control" required ngModel>
+                <small class="text-danger" [class.d-none]="fatherName.valid || fatherName.untouched">*Name is required</small>
+              </div>
+  
+              <div class="form-group">
+                <input type="radio" name="wether living or not">Father is living<br>
+                <input type="radio" name="wether living or not">Father isn't living<br>
+              </div>
+  
+              <div class="form-group">
+                <label>Date Of Birth:</label>
+                <input type="date" #fDob="ngModel" class="form-control" name="fDob" [class.is-invalid]="fDob.invalid  && fDob.touched"   ngModel required>
+                <small class="text-danger" [class.d-none]="fDob.valid || fDob.untouched">*Date of birth is required</small>
+              </div>
+  
+              <div class="form-group">
+                <label>Occupation</label>
+                <input type="text" #occuation="ngModel" class="form-control"  [class.is-invalid]="occuation.invalid  && occuation.touched"  placeholder="father's occupation" name="occupation" ngModel required> 
+                <small id="job" class="form-text text-muted">If father hasn't a job mention that.</small>
+                
+              </div>
+  
+              <div class="form-group">
+                <label>Total income:</label>
+                <input type="number" #income="ngModel" min="00.00"  pattern="\d+(\.\d{2})?" [class.is-invalid]="income.invalid && income.touched" class="form-control" placeholder="total annual income of father in RS." name="income" required ngModel>
+                <small class="text-danger" [class.d-none]="income.valid || income.untouched">*Income is required</small>
+              </div><br><br>
+        </div>
+        
+        <div class="form-group">
+              <h6>Details of Mother</h6>
+              <hr>
+              <div class="form-group">
+                <label>Name:</label>
+                <input type="text" #mName="ngModel"  class="form-control" [class.is-invalid]="mName.invalid  && mName.touched" placeholder="name with initials" name="mName" required ngModel>
+                <small class="text-danger" [class.d-none]="mName.valid || mName.untouched">*Name is required</small>
+              </div>
+  
+              <div class="form-group">
+                <input type="radio" name="wether living or not">Mother is living<br>
+                <input type="radio" name="wether living or not">Mother isn't living<br>
+              </div>
+  
+              <div class="form-group">
+                <label>Date Of Birth:</label>
+                <input type="date" #mDob="ngModel"  [class.is-invalid]="mDob.invalid  && mDob.touched"  class="form-control" name="mDob" ngModel required>
+                <small class="text-danger" [class.d-none]="mDob.valid || mDob.untouched">*Date of birth is required</small>
+              </div>
+  
+              <div class="form-group">
+                <label>Occupation</label>
+                <input type="text" #fOccupation="ngModel"  [class.is-invalid]="fOccupation.invalid && fOccupation.touched" class="form-control" placeholder="father's occupation" name="fOccupation" ngModel>
+                <small id="job" class="form-text text-muted">If mother hasn't a job mention that.</small>
+              </div>
+  
+              <div class="form-group">
+                <label>Total income:</label>
+                <input type="text" #mIncome="ngModel"  min="00.00"  pattern="\d+(\.\d{2})?" [class.is-invalid]="mIncome.invalid && mIncome.touched" class="form-control" placeholder="total annual income of mother in RS." name="mIncome" ngModel required>
+                <small class="text-danger" [class.d-none]="mIncome.valid || mIncome.untouched">*Income is required</small>
+              </div><br><br>
+        </div>
+  
+        <div class="form-group">
+              <h6>Details of Guardians</h6>
+              <hr>
+              <div class="form-group">
+                <label>Name:</label>
+                <input type="text" #gName="ngModel" class="form-control" [class.is-invalid]="gName.invalid  && gName.touched" placeholder="name with initials" name="gName" ngModel  required>
+                <small class="text-danger" [class.d-none]="gName.valid || gName.untouched">*Name is required</small>
+              </div>
+  
+              <div class="form-group">
+                <label>Relationship with applicant of guardians:</label>
+                <input type="text" class="form-control" #gRelation="ngModel" [class.is-invalid]="gRelation.invalid  && gRelation.touched"  placeholder="relationship with applicant" name="gRelation" ngModel required>
+                <small class="text-danger" [class.d-none]="gRelation.valid || gRelation.untouched">*Relationship with guardians  is required</small>
+              </div>
+  
+              <div class="form-group">
+                <label>Date Of Birth:</label>
+                <input type="date" #gDob="ngModel" [class.is-invalid]="gDob.invalid  && gDob.touched" class="form-control"  name="gDob" ngModel required>
+                <small class="text-danger" [class.d-none]="gDob.valid || gDob.untouched">*Date of birth is required</small>
+              </div>
+  
+              <div class="form-group">
+                <label>Occupation</label>
+                <input type="text" #gOccupation="ngModel"  [class.is-invalid]="gOccupation.invalid && gOccupation.touched" class="form-control" placeholder="father's occupation" name="gOccupation" ngModel>
+                <small id="job" class="form-text text-muted">If guardians hasn't a job mention that.</small>
+              </div>
+  
+              <div class="form-group">
+                <label>Total income:</label>
+                <input type="text" #gIncome="ngModel" min="00.00"  pattern="\d+(\.\d{2})?" [class.is-invalid]="gIncome.invalid && gIncome.touched"  class="form-control" placeholder="total annual income of guardians in RS." name="gIncome"  required ngModel>
+                <small class="text-danger" [class.d-none]="gIncome.valid || gIncome.untouched">*Income is required</small>
+              </div><br><br>
+        </div>
+  
+        <div class="form-group">
+              <div class="form-group">
+                <label>Brothers/Sisters:</label><br>
+                <input type="radio" name="sibilings">I have brothers/sisters.<br>
+                <input type="radio" name="sibilings">I haven't brothers/sisters<br>
+              </div>
+  
+              <div>
+                  <label>Number of brothers and sisters: </label>
+                  <select name="# of sibilings" required>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                  </select>
+              </div>
+  
+              <div>
+                <label>Names and ages of brothers and sisters: </label>
+                <input type="text" nameAge="ngModel"  [class.is-invalid]="nameAge.invalid && nameAge.touched" class="form-control" name="nameAge" ngModel>
+              </div>
+        </div>
+  
+        <div>
+            <button  [disabled]="familyDatailsForm.form.invalid" class="btn btn-primary" >Submit</button>
+        </div>
+  
+      </form>
+    </div>
+  
+  </div>
+  

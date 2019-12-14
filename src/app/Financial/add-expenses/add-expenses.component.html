@@ -1,0 +1,40 @@
+<div class="container">
+  <form #gen="ngForm">
+
+    <h3><u>Financial Management</u></h3>
+    <h4>Add Expenses</h4>
+    <div class="form-group container_small">
+      <label for="">Date</label>
+      <input type="date" #Date="ngModel" name="Date" [class.is-invalid]="Date.invalid && Date.touched"
+        class="form-control" ngModel required>
+      <small class="text-danger" [class.d-none]="Date.valid || Date.untouched">*date is required</small>
+    </div>
+    <div class="form-group container_small">
+      <label for="">Description</label>
+      <textarea type="text" #Des="ngModel" name="Des" [class.is-invalid]="Des.invalid && Des.touched"
+        class="form-control" ngModel required placeholder="Enter description"></textarea>
+      <small class="text-danger" [class.d-none]="Des.valid || Des.untouched">*description is required</small>
+    </div>
+    <div class="form-group container_small">
+      <label for="">Amount</label>
+      <input type="number" #Amt="ngModel" name="Amt" min="00.00" pattern="\d+(\.\d{2})?"
+        [class.is-invalid]="Amt.invalid && Amt.touched" class="form-control" ngModel required
+        placeholder="amount in Rs..">
+      <small class="text-danger" [class.d-none]="Amt.valid || Amt.untouched">*amount is required</small>
+    </div>
+    <div class="form-group container_small">
+      <label for="">upload the receipt</label>
+
+      <button [disabled]="gen.form.invalid" class="btn btn-danger">
+        <input type="file" id="Upload Box" class="form-control" [disabled]="gen.form.invalid" name="Upload Box">
+      </button>
+
+    </div>
+
+    <div class="btn-group mr-2" role="group" aria-label="First group"><button [disabled]="gen.form.invalid"
+        class="btn btn-primary">Submit</button></div>
+    <div class="btn-group mr-2" role="group" aria-label="Second group"><button type="reset" value="Reset"
+        class="btn btn-danger"> Reset </button></div>
+
+  </form>
+</div>
